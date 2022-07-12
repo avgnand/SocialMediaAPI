@@ -10,4 +10,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SocialMedia.Data\SocialMedia.Data.csproj" />
+    <ProjectReference Include="..\SocialMedia.Models\SocialMedia.Models.csproj" />
+    <ProjectReference Include="..\SocialMedia.Services\SocialMedia.Services.csproj" />
+  </ItemGroup>
+
 </Project>
