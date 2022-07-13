@@ -1,11 +1,14 @@
 using SocialMedia.Data;
 using SocialMedia.Models.Reply;
+using SocialMedia.Models;
+using SocialMedia.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace SocialMedia.Services.Reply
 {
     public class ReplyService : IReplyService
     {
-        private readonly int _userId;
+        private readonly Guid _userId;
         private readonly AppDbContext _dbContext;
         public ReplyService(AppDbContext dbContext) {
             _dbContext = dbContext;
@@ -13,7 +16,7 @@ namespace SocialMedia.Services.Reply
         // * POST Reply to a comment using Foreign Key - required
         public async Task<bool> CreateReplyAsync(ReplyCreate request) 
         {
-            var ReplyEntity = new ReplyEntity
+            var replyEntity = new ReplyEntity
             {
                 Text = request.Text,
                 AuthorId = _userId
@@ -30,7 +33,7 @@ namespace SocialMedia.Services.Reply
         public async Task<ReplyDetail> GetReplyByCommentIdAsync(int commentId) 
         {
             var replyEntity = await _dbContext.Replys
-            .FirstOrDefaultAsync(e => e.Id == replyId && e.AuthorId == _userId);
+            .FirstOrDefaultAsync(e => e.Id == commentId && e.AuthorId == _userId);
 
             return replyEntity is null ? null : new ReplyDetail
             {

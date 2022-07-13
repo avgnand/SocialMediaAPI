@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SocialMedia.Services.User;
+using SocialMedia.Models;
+using SocialMedia.Models.User;
 
 namespace SocialMedia.WebAPI.Controllers
 {

@@ -1,4 +1,5 @@
 using SocialMedia.Models.Post;
+using SocialMedia.Models;
 
 namespace SocialMedia.Services.Post
 {

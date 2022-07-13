@@ -1,12 +1,14 @@
-using System.Security.Cryptography;
 using SocialMedia.Data;
+using SocialMedia.Models;
 using SocialMedia.Models.Comment;
+using SocialMedia.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace SocialMedia.Services.Comment
 {
     public class CommentService : ICommentService
     {
-        private readonly int _userId;
+        private readonly Guid _userId;
         private readonly AppDbContext _dbContext;
         public CommentService (AppDbContext dbContext) {
             _dbContext = dbContext;
@@ -14,7 +16,7 @@ namespace SocialMedia.Services.Comment
         // * POST Create a comment - required
         public async Task<bool> CreateCommentAsync(CommentCreate request) 
         {
-            var CommentEntity = new CommentEntity
+            var commentEntity = new CommentEntity
             {
                 Text = request.Text,
                 AuthorId = _userId
@@ -31,7 +33,7 @@ namespace SocialMedia.Services.Comment
         public async Task<CommentDetail> GetCommentByPostIdAsync(int postId) 
         {
             var commentEntity = await _dbContext.Comments
-            .FirstOrDefaultAsync(e => e.Id == commentId && e.AuthorId == _userId);
+            .FirstOrDefaultAsync(e => e.Id == postId && e.AuthorId == _userId);
 
             return commentEntity is null ? null : new CommentDetail
             {

@@ -1,4 +1,5 @@
 using SocialMedia.Models.Comment;
+using SocialMedia.Models;
 
 namespace SocialMedia.Services.Comment
 {

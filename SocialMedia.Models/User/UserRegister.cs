@@ -9,6 +9,8 @@ namespace SocialMedia.Models.User
     public class UserRegister
     {
         [Required]
+        public int Id { get; set; }
+        [Required]
         [EmailAddress]
         public string Email { get; set; }
         [Required]

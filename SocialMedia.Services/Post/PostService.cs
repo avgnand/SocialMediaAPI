@@ -1,11 +1,14 @@
 using SocialMedia.Data;
 using SocialMedia.Models.Post;
+using SocialMedia.Models;
+using SocialMedia.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace SocialMedia.Services.Post
 {
     public class PostService : IPostService
     {
-        private readonly int _userId;
+        private readonly Guid _userId;
         private readonly AppDbContext _dbContext;
         public PostService (AppDbContext dbContext) {
             _dbContext = dbContext;
