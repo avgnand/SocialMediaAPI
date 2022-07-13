@@ -1,3 +1,5 @@
+using SocialMedia.Models.Reply;
+
 namespace SocialMedia.Services.Reply
 {
     public interface IReplyService

@@ -1,4 +1,5 @@
 // TODO Add using statment for Task and UserRegister  
+using SocialMedia.Models.User;
 
 namespace SocialMedia.Services.User
 {

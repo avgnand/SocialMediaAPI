@@ -1,5 +1,6 @@
 // TODO Double check using statements
 using SocialMedia.Data;
+using SocialMedia.Models.User;
 
 namespace SocialMedia.Services.User
 {
