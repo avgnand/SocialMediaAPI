@@ -1,5 +1,3 @@
-using SocialMedia.Models.Note;
-
 namespace SocialMedia.Services.Post
 {
     public interface IPostService

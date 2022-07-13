@@ -1,7 +1,13 @@
+using SocialMedia.Data;
+
 namespace SocialMedia.Services.Comment
 {
     public class CommentService : ICommentService
     {
+        private readonly AppDbContext _context;
+        public CommentService (AppDbContext context) {
+            _context = context;
+        }
         // * POST Create a comment - required
         public async Task<bool> CreateCommentAsync() {
 

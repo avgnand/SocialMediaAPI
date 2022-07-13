@@ -1,8 +1,13 @@
-using System.Threading.Tasks;
+using SocialMedia.Data;
+
 namespace SocialMedia.Services.Post
 {
     public class PostService : IPostService
     {
+        private readonly AppDbContext _context;
+        public PostService (AppDbContext context) {
+            _context = context;
+        }
         // * POST Create a post - required
         public async Task<bool> CreatePostAsync() {
                

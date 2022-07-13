@@ -1,14 +1,20 @@
+using SocialMedia.Data;
+
 namespace SocialMedia.Services.Reply
 {
     public class ReplyService : IReplyService
     {
+        private readonly AppDbContext _context;
+        public ReplyService(AppDbContext context) {
+            _context = context;
+        }
         // * POST Reply to a comment using Foreign Key - required
-        Task<bool> CreateReplyAsync() {
+        public async Task<bool> CreateReplyAsync() {
 
         }
 
         // * GET Reply by comment id - required
-        Task<> GetReplyByCommentIdAsync() {
+        public async Task<> GetReplyByCommentIdAsync() {
 
         }
 
