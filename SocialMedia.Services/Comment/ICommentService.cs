@@ -1,11 +1,13 @@
+using SocialMedia.Models.Comment;
+
 namespace SocialMedia.Services.Comment
 {
     public interface ICommentService
     {
-        Task<bool> CreateCommentAsync();
-        Task<> GetCommentByPostIdAsync();
-        // Task<> GetCommentByAuthorIdAsync();
-        // Task<bool> UpdateCommentAsync();
-        // Task<bool> DeleteCommentAsync();
+        Task<bool> CreateCommentAsync(CommentCreate request);
+        Task<CommentDetail> GetCommentByPostIdAsync(int postId);
+        // Task<CommentDetail> GetCommentByAuthorIdAsync(int authorId);
+        // Task<bool> UpdateCommentAsync(CommentUpdate request);
+        // Task<bool> DeleteCommentAsync(int commentId);
     }
 }
