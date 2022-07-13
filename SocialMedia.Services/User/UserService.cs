@@ -1,17 +1,11 @@
 // TODO Double check using statements
-using System;
-using System.ComponentModel.DataAnnotations;
-uisng System.Threading.Tasks;
 using SocialMedia.Data;
-using SocialMedia.Data.Entities;
-using SocialMedia.Models.User;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
 
 namespace SocialMedia.Services.User
 {
     public class UserService : IUserService
     {
+        private readonly int _userId;
         private readonly AppDbContext _context;
         public UserService(AppDbContext context)
         {
