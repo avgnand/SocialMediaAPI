@@ -1,3 +1,5 @@
+using SocialMedia.Models.Comment;
+
 namespace SocialMedia.Services.Comment
 {
     public interface ICommentService

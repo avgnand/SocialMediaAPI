@@ -1,4 +1,5 @@
 using SocialMedia.Data;
+using SocialMedia.Models.Reply;
 
 namespace SocialMedia.Services.Reply
 {
