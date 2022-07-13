@@ -1,5 +1,6 @@
 using System.Security.Cryptography;
 using SocialMedia.Data;
+using SocialMedia.Models.Comment;
 
 namespace SocialMedia.Services.Comment
 {
